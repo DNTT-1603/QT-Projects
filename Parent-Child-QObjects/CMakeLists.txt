@@ -15,7 +15,7 @@ find_package(QT NAMES Qt6 Qt5 COMPONENTS Core REQUIRED)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Core REQUIRED)
 
 add_executable(Parent-Child-QObjects
-  main.cpp
+  main-QSharedPointer.cpp
   test.cpp
 )
 target_link_libraries(Parent-Child-QObjects Qt${QT_VERSION_MAJOR}::Core)

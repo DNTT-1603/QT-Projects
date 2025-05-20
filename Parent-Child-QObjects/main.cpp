@@ -33,6 +33,16 @@ void printTree(Test *root, int level = 0 ) {
 int main(int argc, char *argv[])
 {
     unique_ptr<Test>  uni_root(makeTree());
+    Test parent;
+    parent.setObjectName("Parentxxxx");
+    Test child;
 
-    printTree(uni_root.get());
+    child.setObjectName("Childxxxx");
+    child.setParent(&parent);
+
+    Test* t = (Test*) parent.children().at(0);
+
+    qInfo() << "Parent: " << parent.objectName() << "Child: " << parent.children();
+    qInfo() << "Parent: " << parent.objectName() << "Child: " << t->objectName();
+
 }
